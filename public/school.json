@@ -1,0 +1,131 @@
+[
+  {
+    "class_image": "https://i.ibb.co/v1PwcZq/Introduction-to-Graphic-Design.jpg",
+    "class_name": "Introduction to Graphic Design",
+    "instructor": "John Smith",
+    "instructor_image": "instructor1.jpg",
+    "instructor_mail": "johnsmith@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 20,
+    "price": 99.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/7X804Bq/Typography-and-Layout-Design.jpg",
+    "class_name": "Typography and Layout Design",
+    "instructor": "Emily Johnson",
+    "instructor_image": "instructor2.jpg",
+    "instructor_mail": "emilyjohnson@example.com",
+    "classes_taken_by_instructor": ["Color Theory", "Digital Illustration"],
+    "available_seats": 15,
+    "price": 149.99
+    
+  },
+  {
+    "class_image": "https://i.ibb.co/N2VFnTM/Logo-Design-Fundamentals.jpg",
+    "class_name": "Logo Design Fundamentals",
+    "instructor": "Michael Davis",
+    "instructor_image": "instructor3.jpg",
+    "instructor_mail": "michaeldavis@example.com",
+    "classes_taken_by_instructor": ["Typography", "Color Theory"],
+    "available_seats": 10,
+    "price": 199.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/3YMkpWv/Color-Theory-in-Graphic-Design.jpg",
+    "class_name": "Color Theory in Graphic Design",
+    "instructor": "Sarah Thompson",
+    "instructor_image": "instructor4.jpg",
+    "instructor_mail": "sarahthompson@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 12,
+    "price": 129.99
+    
+  },
+  {
+    "class_image": "https://i.ibb.co/0DHnFrv/bold-illustration-style.png",
+    "class_name": "Digital Illustration Techniques",
+    "instructor": "David Roberts",
+    "instructor_image": "instructor5.jpg",
+    "instructor_mail": "davidroberts@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 18,
+    "price": 179.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/p3nC9Ft/Packaging-Design-Workshop.webp",
+    "class_name": "Packaging Design Workshop",
+    "instructor": "Jessica Anderson",
+    "instructor_image": "instructor6.jpg",
+    "instructor_mail": "jessicaanderson@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 8,
+    "price": 249.99
+    
+  },
+  {
+    "class_image": "https://i.ibb.co/ZTKXB4H/Web-Design-Fundamentals.jpg",
+    "class_name": "Web Design Fundamentals",
+    "instructor": "Mark Wilson",
+    "instructor_image": "instructor7.jpg",
+    "instructor_mail": "markwilson@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 25,
+    "price": 149.99
+  },
+  {
+    "class_image": "https://i.ibb.co/nq2jyfh/Print-Design-and-Layout.jpg",
+    "class_name": "Print Design and Layout",
+    "instructor": "Laura Johnson",
+    "instructor_image": "instructor8.jpg",
+    "instructor_mail": "laurajohnson@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 15,
+    "price": 199.99
+  },
+  {
+    "class_image": "https://i.ibb.co/pWfy7Gb/Digital-Marketing-for-Designers.png",
+    "class_name": "Digital Marketing for Designers",
+    "instructor": "Ryan Davis",
+    "instructor_image": "instructor9.jpg",
+    "instructor_mail": "ryandavis@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 20,
+    "price": 179.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/RbhMvs7/Motion-Graphics-and-Animation.jpg",
+    "class_name": "Motion Graphics and Animation",
+    "instructor": "Alex Turner",
+    "instructor_image": "instructor10.jpg",
+    "instructor_mail": "alexturner@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 12,
+    "price": 199.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/wdpxpKW/Advanced-Photoshop-Techniques.jpg",
+    "class_name": "Advanced Photoshop Techniques",
+    "instructor": "Olivia Johnson",
+    "instructor_image": "instructor11.jpg",
+    "instructor_mail": "oliviajohnson@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 10,
+    "price": 149.99,
+    "category": "popular"
+  },
+  {
+    "class_image": "https://i.ibb.co/pXzZGdf/Visual-Branding-and-Identity.jpg",
+    "class_name": "Visual Branding and Identity",
+    "instructor": "Daniel Smith",
+    "instructor_image": "instructor12.jpg",
+    "instructor_mail": "danielsmith@example.com",
+    "classes_taken_by_instructor": ["Typography", "Logo Design"],
+    "available_seats": 15,
+    "price": 199.99
+  }
+]
