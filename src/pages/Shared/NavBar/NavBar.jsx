@@ -38,7 +38,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar fixed z-10 max-w-screen-xl bg-opacity-20 bg-violet-900 text-violet-900">
+            <div className="navbar fixed z-10 max-w-screen-xl bg-opacity-40 bg-white text-violet-900">
                 <div className="navbar-start">
                     <div className={`dropdown ${isMenuOpen ? 'active' : ''}`}>
                         <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={() => setMenuOpen(!isMenuOpen)}>

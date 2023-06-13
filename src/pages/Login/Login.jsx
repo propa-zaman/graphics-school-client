@@ -66,7 +66,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="pt-4 flex items-center space-x-4">
-                <button className="flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none bg-violet-500 hover:bg-violet-600 hover:shadow-lg">
+                <button className="flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none bg-violet-900 hover:bg-violet-950 hover:shadow-lg">
                   Login
                 </button>
               </div>
