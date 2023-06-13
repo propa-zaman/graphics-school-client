@@ -17,7 +17,7 @@ const SectionTitle = ({ heading, subHeading }) => {
   };
 
   return (
-    <div className="mx-auto text-center">
+    <div className="mx-auto text-center mt-20 mb-20">
       <motion.p
         className="text-pink-600 mb-2 text-sm"
         initial="hidden"

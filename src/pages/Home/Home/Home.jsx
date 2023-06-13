@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import useTitle from '../../../hooks/useTitle';
 import PopularClass from '../PopularClass/PopularClass';
+import PopularInstructor from '../PopularInstructor/PopularInstructor';
 
 const Home = () => {
     useTitle('Home');
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PopularClass></PopularClass>
+            <PopularInstructor></PopularInstructor>
         </div>
     );
 };

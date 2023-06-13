@@ -29,7 +29,7 @@ const NavBar = () => {
                     </>
                 ) : (
                     <>
-                        <li><Link to="/login" className="text-xl">Login</Link></li>
+                        <li><Link to="/login" className="text-lg">Login</Link></li>
                     </>
                 )
             }

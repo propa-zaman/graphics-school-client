@@ -1,9 +1,10 @@
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import useSchool from "../../../hooks/useSchool";
-import ClassCard from "../../Components/ClassCard/ClassCard";
+import InstructorCard from "../../Components/InstructorCard/InstructorCard";
 
 
-const PopularClass = () => {
+
+const PopularInstructor = () => {
     const [school] = useSchool();
     const popular = school.filter(classes => classes.enrolled_students >= 50);
     
@@ -11,18 +12,18 @@ const PopularClass = () => {
         <section className="mb-20">
             <SectionTitle
                 heading="From Graphics School"
-                subHeading="Popular Classes"
+                subHeading="Popular Instructors"
             ></SectionTitle>
             <div className="grid md:grid-cols-2 gap-10">
                 {
-                    popular.map(school => <ClassCard
+                    popular.map(school => <InstructorCard
                         // key={item._id}
                         school={school}
-                    ></ClassCard>)
+                    ></InstructorCard>)
                 }
             </div>
         </section>
     );
 };
 
-export default PopularClass;
+export default PopularInstructor;
