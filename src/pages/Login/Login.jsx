@@ -2,10 +2,11 @@ import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,19 +36,12 @@ const Login = () => {
       })
   }
 
-  const handleGoogleLogin = () => {
-    googleSignIn().then(result => {
-      // Handle success here
-    }).catch(error => {
-      // Handle error here
-    });
-  }
 
   return (
     <div className="max-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto mt-40">
-        <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
-          <div className="max-w-md mx-auto">
+      <div className=" py-3 sm:max-w-xl sm:mx-auto mt-40">
+        <div className=" px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+          <div className="max-w-xl mx-auto">
             <div className="flex items-center space-x-5">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-10 w-10 text-yellow-600"><path d="M22 12h-4m-2 0a6 6 0 01-6 6a6 6 0 01-6-6a6 6 0 016-6a6 6 0 016 6z"></path></svg>
               <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
@@ -75,11 +69,9 @@ const Login = () => {
                 <button className="flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none bg-violet-500 hover:bg-violet-600 hover:shadow-lg">
                   Login
                 </button>
-                <button onClick={handleGoogleLogin} className="flex justify-center items-center w-full h-12 text-white px-4 py-3 rounded-md focus:outline-none bg-red-500 hover:bg-red-600 hover:shadow-lg">
-                  <FaGoogle />
-                </button>
               </div>
             </form>
+            <SocialLogin></SocialLogin>
             <div className="pt-12 pb-12 text-center">
               <p>
                 Don't have an account? <Link to="/signup" className="underline font-semibold">Sign up here.</Link>
