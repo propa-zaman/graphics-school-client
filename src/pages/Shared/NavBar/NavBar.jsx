@@ -24,8 +24,14 @@ const NavBar = () => {
                 user ? (
                     <>
                         <li><Link to="/dashboard" className="text-lg">Dashboard</Link></li>
-                        <li><img src={user?.photoUrl} alt="User profile" className="h-8 w-8 rounded-full" /></li>
-                        <button onClick={handleLogOut} className="btn btn-ghost text-lg">LogOut</button>
+                        <li> {user.photoURL && (
+                        <img title={user.displayName}
+                            className="h-12 rounded-full "
+                            src={user?.photoURL}
+                            alt=""
+                        />
+                    )}</li>
+                        <button onClick={handleLogOut} className="text-lg">LogOut</button>
                     </>
                 ) : (
                     <>

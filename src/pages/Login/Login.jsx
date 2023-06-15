@@ -60,7 +60,7 @@ const Login = () => {
                   <div className="relative">
                     <input type={passwordVisible ? "text" : "password"} name="password" className="input w-full pr-16 px-4 py-2 border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-violet-500" required />
                     <button type="button" onClick={() => setPasswordVisible(!passwordVisible)} className="absolute inset-y-0 right-0 pr-2 flex items-center">
-                      {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                      {passwordVisible ? <FaEye /> : <FaEyeSlash />}
                     </button>
                   </div>
                 </div>

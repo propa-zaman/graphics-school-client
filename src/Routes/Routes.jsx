@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Error from "../pages/Error/Error";
+import Dashboard from "../Layout/Dashboard";
   
   
   
@@ -28,18 +29,18 @@ import Error from "../pages/Error/Error";
           },
       ]
     },
-    // {
-    //   path: 'dashboard',
-    // //   TODO: make dashboard private route
-    //   element: <Dashboard></Dashboard>,
-    //   children: [
-    //     // {
-    //     //   path: 'uHome',
-    //     //   element: <UHome></UHome>
-    //     // },
+    {
+      path: 'dashboard',
+    //   TODO: make dashboard private route
+      element: <Dashboard></Dashboard>,
+      children: [
+        // {
+        //   path: 'uHome',
+        //   element: <UHome></UHome>
+        // },
         
-    //   ]
-    // },
+      ]
+    },
     {
         path: "*",
         element: <Error></Error>
