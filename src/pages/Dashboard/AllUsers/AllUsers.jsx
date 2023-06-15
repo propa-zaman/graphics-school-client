@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import { FaTrashAlt, FaUserShield, FaUserTie } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -7,20 +7,19 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 const AllUsers = () => {
     const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await axiosSecure.get('/users')
+        const res = await axiosSecure.get('/users');
         console.log(res.data);
         return res.data;
-        
-    })
+    });
 
-    const handleMakeAdmin = user =>{
+    const handleMakeAdmin = (user) => {
         fetch(`https://graphics-school-sever-propa-zaman.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            if(data.modifiedCount){
+            console.log(data);
+            if (data.modifiedCount) {
                 refetch();
                 Swal.fire({
                     position: 'top-end',
@@ -28,12 +27,32 @@ const AllUsers = () => {
                     title: `${user.name} is an Admin Now!`,
                     showConfirmButton: false,
                     timer: 1500
-                  })
+                });
             }
-        })
-    }
+        });
+    };
 
-    const handleDelete = user => {
+    const handleMakeInstructor = (user) => {
+        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.modifiedCount) {
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Instructor Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    };
+
+    const handleDelete = (user) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -55,13 +74,12 @@ const AllUsers = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                            )
+                            );
                         }
-                    })
+                    });
             }
-        })
-
-    }
+        });
+    };
 
     return (
         <div className="w-full">
@@ -70,7 +88,7 @@ const AllUsers = () => {
                 <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-lg">
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -79,19 +97,32 @@ const AllUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            users.map((user, index) => <tr key={user._id}>
+                        {users.map((user, index) => (
+                            <tr key={user._id}>
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{ user.role === 'admin' ? 'admin' :
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button> 
-                                    }</td>
-                                <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
-                            </tr>)
-                        }
-                        
-                        
+                                <td>
+                                    {(user.role === 'admin' || user.role === 'instructor') ? (
+                                        user.role
+                                    ) : (
+                                        <>
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-violet-600 text-white">
+                                                <FaUserShield />
+                                            </button>
+                                            <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-green-600 text-white">
+                                                <FaUserTie/>
+                                            </button>
+                                        </>
+                                    )}
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600 text-white">
+                                        <FaTrashAlt />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
