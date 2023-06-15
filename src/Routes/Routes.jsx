@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Error from "../pages/Error/Error";
 import Dashboard from "../Layout/Dashboard";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
   
   
   
@@ -18,6 +19,10 @@ import Dashboard from "../Layout/Dashboard";
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: 'classes',
+          element: <SignUp></SignUp>
         },
         {
             path: 'login',
@@ -34,10 +39,10 @@ import Dashboard from "../Layout/Dashboard";
     //   TODO: make dashboard private route
       element: <Dashboard></Dashboard>,
       children: [
-        // {
-        //   path: 'uHome',
-        //   element: <UHome></UHome>
-        // },
+        {
+          path: 'allusers', 
+          element: <AllUsers></AllUsers>
+        }
         
       ]
     },

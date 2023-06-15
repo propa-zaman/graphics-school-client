@@ -81,7 +81,7 @@ const SignUp = () => {
                       required: true,
                       minLength: 6,
                       maxLength: 20,
-                      pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                      // pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                     })} placeholder="Password" className="input w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-violet-500" />
                     {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                     {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be at least 6 characters</p>}
@@ -92,7 +92,7 @@ const SignUp = () => {
                     <label className="leading-loose">Confirm Password</label>
                     <input type="password" {...register("confirmPassword", {
                       required: true,
-                      validate: value => value === watch("password") || "Passwords do not match"
+                      // validate: value => value === watch("password") || "Passwords do not match"
                     })} placeholder="Confirm Password" className="input w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-violet-500" />
                     {errors.confirmPassword?.type === 'required' && <p className="text-red-600">Confirm Password is required</p>}
                     {errors.confirmPassword?.type === 'validate' && <p className="text-red-600">{errors.confirmPassword.message}</p>}

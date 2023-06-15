@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import { FaBook, FaHome, FaUsers, FaClipboard, FaUserGraduate, FaCalendarAlt, FaFileAlt } from 'react-icons/fa';
 
@@ -40,24 +40,24 @@ const Dashboard = () => {
                 >
                     {/* Sidebar Content */}
                     <div className="p-4">
-                        <h3 className="text-xl font-bold mb-4">Menu</h3>
-                        <ul className="menu p-4 w-80">
+                        <h3 className="text-xl font-bold mb-4">Dashboard</h3>
+                        <ul className="menu p-4 w-90">
 
                             {
                                 isAdmin ? <>
-                                    <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
+                                    <li><NavLink to="/"><FaHome></FaHome> Admin Home</NavLink></li>
                                     <li><NavLink to="/dashboard/classes"> <FaBook /> Manage Classes</NavLink></li>
                                     <li><NavLink to="/dashboard/allusers"><FaUsers /> Manage Users</NavLink></li>
 
 
                                 </> : isInstructor ? <>
-                                    <li><NavLink to="/dashboard/home"><FaHome></FaHome> Instructor Home</NavLink></li>
+                                    <li><NavLink to="/"><FaHome></FaHome> Instructor Home</NavLink></li>
                                     <li><NavLink to="/dashboard/addclass"> <FaClipboard /> Add A Class</NavLink></li>
                                     <li><NavLink to="/dashboard/enrolledstudents"> <FaUsers />  Total Enrolled Students</NavLink></li>
                                     <li><NavLink to="/dashboard/feedback"> <FaFileAlt /> Feedback</NavLink></li>
 
                                 </> : <>
-                                    <li><NavLink to="/dashboard/home"><FaHome></FaHome> Student Home</NavLink></li>
+                                    <li><NavLink to="/"><FaHome></FaHome> Student Home</NavLink></li>
                                     <li><NavLink to="/dashboard/selectedclasses"> <FaUserGraduate />My Selected Classes</NavLink></li>
                                     <li><NavLink to="/dashboard/enrolledclasses"> <FaCalendarAlt /> My Enrolled Classes</NavLink></li>
                                 </>
@@ -74,6 +74,8 @@ const Dashboard = () => {
                     </div>
                 </motion.aside>
 
+<Outlet>
+</Outlet>
 
             </div>
         </div>
