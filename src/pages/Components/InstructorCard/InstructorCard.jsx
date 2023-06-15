@@ -1,8 +1,8 @@
-import { FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
+import { FaUsers, FaChalkboardTeacher, FaMailBulk } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const InstructorCard = ({ school }) => {
-  const { instructor_image, instructor, classes_taken_by_instructor, enrolled_students } = school;
+  const { instructor_image, instructor, classes_taken_by_instructor, enrolled_students, instructor_mail } = school;
 
   return (
     <motion.div
@@ -16,6 +16,10 @@ const InstructorCard = ({ school }) => {
       </div>
       <div className="text-center">
         <h3 className="text-xl font-semibold mb-2">{instructor}</h3>
+        <div className="flex items-center justify-center">
+          <FaMailBulk className="text-gray-500 mr-1" />
+          <p className="text-gray-500 text-sm">{instructor_mail}</p>
+        </div>
         <div className="flex items-center justify-center">
           <FaChalkboardTeacher className="text-gray-500 mr-1" />
           <p className="text-gray-500 text-sm">{classes_taken_by_instructor} classes</p>

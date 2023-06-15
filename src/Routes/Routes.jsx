@@ -8,6 +8,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import Error from "../pages/Error/Error";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import Instructors from "../pages/Instructors/Instructors";
+import Classes from "../pages/Classes/Classes";
+
   
   
   
@@ -22,7 +25,11 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
         },
         {
           path: 'classes',
-          element: <SignUp></SignUp>
+          element: <Classes></Classes>
+        },
+        {
+          path: 'instructors',
+          element: <Instructors></Instructors>
         },
         {
             path: 'login',

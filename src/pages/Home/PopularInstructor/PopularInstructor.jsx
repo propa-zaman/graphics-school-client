@@ -17,7 +17,7 @@ const PopularInstructor = () => {
             <div className="grid md:grid-cols-2 gap-10">
                 {
                     popular.map(school => <InstructorCard
-                        // key={item._id}
+                        key={school._id}
                         school={school}
                     ></InstructorCard>)
                 }
