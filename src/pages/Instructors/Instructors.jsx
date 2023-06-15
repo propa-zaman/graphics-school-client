@@ -13,7 +13,7 @@ const Instructors = () => {
         <div>
             <Cover img={img} title="Our Instructors"></Cover>
 
-            <div className="grid md:grid-cols-2 gap-10 mt-20">
+            <div className="grid md:grid-cols-2 gap-10 mt-20 mb-20">
                 {
                     popular.map(school => <InstructorCard
                         key={school._id}

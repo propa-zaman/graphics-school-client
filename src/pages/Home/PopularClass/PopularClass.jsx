@@ -16,7 +16,7 @@ const PopularClass = () => {
             <div className="grid md:grid-cols-2 gap-10">
                 {
                     popular.map(school => <ClassCard
-                        // key={item._id}
+                        key={school._id}
                         school={school}
                     ></ClassCard>)
                 }
