@@ -9,7 +9,12 @@ const useEnrolled = () => {
     const { refetch, data: enrolled = [] } = useQuery({
         queryKey: ['enrolled', user?.email],
         enabled: !loading,
-     
+        // queryFn: async () => {
+        //     const res = await fetch(`http://localhost:5000/carts?email=${user?.email}`, { headers: {
+        //         authorization: `bearer ${token}`
+        //     }})
+        //     return res.json();
+        // },
         queryFn: async () => {
             const res = await axiosSecure(`/enrolled?email=${user?.email}`)
             console.log('res from axios', res)
