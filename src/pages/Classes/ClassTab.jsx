@@ -6,7 +6,7 @@ import useEnrolled from '../../hooks/useEnrolled';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const ClassTab = ({ school }) => {
-  const { class_image, class_name, instructor, available_seats, price } = school;
+  const { _id, class_image, class_name, instructor, available_seats, price } = school;
   const {user} = useContext(AuthContext);
   const [, refetch] = useEnrolled();
   const navigate = useNavigate();
