@@ -8,7 +8,8 @@ import { FaBook, FaHome, FaUsers, FaClipboard, FaUserGraduate, FaCalendarAlt, Fa
 
 const Dashboard = () => {
     useTitle('Dashboard');
-    const isAdmin = true;
+    // TODO: Make them dynamic
+    const isAdmin = false;
     const isInstructor = true;
 
 
