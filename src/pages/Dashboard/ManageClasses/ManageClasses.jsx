@@ -15,7 +15,7 @@ const ManageClasses = () => {
     });
 
     const handleApprove = (sc) => {
-        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/${sc._id}`, {
+        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/approve/${sc._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -35,7 +35,7 @@ const ManageClasses = () => {
     };
 
     const handleDeny = (sc) => {
-        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/${sc._id}`, {
+        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/deny/${sc._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -65,7 +65,7 @@ const ManageClasses = () => {
                             <th>#</th>
                             <th>Class</th>
                             <th>Image</th>
-                            <th>Instrctor</th>
+                            <th>Insturctor</th>
                             <th>Email</th>
                             <th>Available Seats</th>
                             <th>Price</th>
@@ -89,7 +89,7 @@ const ManageClasses = () => {
                                 <td>{sc.available_seats}</td>
                                 <td>{sc.price}</td>
                                 <td>  {(sc.status === 'approve' || sc.status === 'deny') ? (
-                                        user.role
+                                        sc.status
                                     ) : (
                                         <>
                                             <button onClick={() => handleApprove(sc)} className="btn btn-ghost bg-green-600 text-white">

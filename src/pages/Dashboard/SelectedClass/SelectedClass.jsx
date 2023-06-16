@@ -1,7 +1,6 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useEnrolled from "../../../hooks/useEnrolled";
-import { useTime } from "framer-motion";
 import useTitle from "../../../hooks/useTitle";
 
 const SelectedClass = () => {
@@ -76,7 +75,7 @@ const SelectedClass = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    {item.name}
+                                    {item.class_name}
                                 </td>
                                 <td className="text-end">${item.price}</td>
                                 <td>
