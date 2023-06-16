@@ -10,6 +10,8 @@ import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
+import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
+import AddClass from "../pages/Dashboard/AddClass/AddClass";
 
   
   
@@ -49,7 +51,15 @@ import Classes from "../pages/Classes/Classes";
         {
           path: 'allusers', 
           element: <AllUsers></AllUsers>
-        }
+        },
+        {
+          path: 'selectedclasses',
+          element: <SelectedClass></SelectedClass>
+        },
+        {
+          path: 'addclass',
+          element: <AddClass></AddClass>
+        },
         
       ]
     },

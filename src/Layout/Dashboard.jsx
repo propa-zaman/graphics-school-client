@@ -3,14 +3,18 @@ import { motion } from 'framer-motion';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import { FaBook, FaHome, FaUsers, FaClipboard, FaUserGraduate, FaCalendarAlt, FaFileAlt } from 'react-icons/fa';
+import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 
 
 const Dashboard = () => {
     useTitle('Dashboard');
     // TODO: Make them dynamic
-    const isAdmin = true;
-    const isInstructor = true;
+    // const isAdmin = true;
+    // const isInstructor = true;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -54,8 +58,8 @@ const Dashboard = () => {
                                 </> : isInstructor ? <>
                                     <li><NavLink to="/"><FaHome></FaHome> Instructor Home</NavLink></li>
                                     <li><NavLink to="/dashboard/addclass"> <FaClipboard /> Add A Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/enrolledstudents"> <FaUsers />  Total Enrolled Students</NavLink></li>
-                                    <li><NavLink to="/dashboard/feedback"> <FaFileAlt /> Feedback</NavLink></li>
+                                    <li><NavLink to="/dashboard/myclasses"> <FaFileAlt /> My Classes</NavLink></li>
+                                    
 
                                 </> : <>
                                     <li><NavLink to="/"><FaHome></FaHome> Student Home</NavLink></li>
