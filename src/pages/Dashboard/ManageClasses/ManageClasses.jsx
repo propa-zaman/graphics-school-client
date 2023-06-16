@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaRegThumbsDown, FaRegThumbsUp } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useTitle from "../../../hooks/useTitle";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -14,31 +14,42 @@ const ManageClasses = () => {
         return res.data;
     });
 
-    const handleDelete = (user) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/${user._id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            );
-                        }
-                    });
+    const handleApprove = (sc) => {
+        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/${sc._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.modifiedCount) {
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${sc.class_name} is Approved!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    };
+
+    const handleDeny = (sc) => {
+        fetch(`https://graphics-school-sever-propa-zaman.vercel.app/school/${sc._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.modifiedCount) {
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${sc.class_name} is Denied!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             }
         });
     };
@@ -46,7 +57,7 @@ const ManageClasses = () => {
     return (
         <div className="w-full">
             <h3 className="text-3xl font-semibold my-4">Total Classes: {school.length}</h3>
-            <div className="overflow-x-auto">
+            <div className="">
                 <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
@@ -58,7 +69,7 @@ const ManageClasses = () => {
                             <th>Email</th>
                             <th>Available Seats</th>
                             <th>Price</th>
-                            <th>Action</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,12 +88,20 @@ const ManageClasses = () => {
                                 <td>{sc.instructor_mail}</td>
                                 <td>{sc.available_seats}</td>
                                 <td>{sc.price}</td>
+                                <td>  {(sc.status === 'approve' || sc.status === 'deny') ? (
+                                        user.role
+                                    ) : (
+                                        <>
+                                            <button onClick={() => handleApprove(sc)} className="btn btn-ghost bg-green-600 text-white">
+                                                <FaRegThumbsUp />
+                                            </button>
+                                            <button onClick={() => handleDeny(sc)} className="btn btn-ghost bg-red-600 text-white">
+                                                <FaRegThumbsDown/>
+                                            </button>
+                                        </>
+                                    )}</td>
                              
-                                <td>
-                                    <button onClick={() => handleDelete(sc)} className="btn btn-ghost bg-red-600 text-white">
-                                        <FaTrashAlt />
-                                    </button>
-                                </td>
+                                
                             </tr>
                         ))}
                     </tbody>
