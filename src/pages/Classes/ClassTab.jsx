@@ -75,8 +75,8 @@ const ClassTab = ({ school }) => {
         </div>
         <button
           onClick={handleSelect}
-          className={`mt-4 btn btn-primary ${available_seats === 0 || isAdmin || isInstructor ? 'disabled:opacity-50' : ''}`}
-          disabled={available_seats === 0 || isAdmin || isInstructor}
+          className={`mt-4 btn btn-primary ${available_seats <= 0 || isAdmin || isInstructor ? 'disabled:opacity-50' : ''}`}
+          disabled={available_seats <= 0 || isAdmin || isInstructor}
         >
           Select
         </button>
