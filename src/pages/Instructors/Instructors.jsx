@@ -8,7 +8,7 @@ import useTitle from '../../hooks/useTitle';
 const Instructors = () => {
     useTitle('Instructors')
     const [school] = useSchool();
-    const popular = school.filter(classes => classes.enrolled_students >= 20);
+    const popular = school.filter(classes => classes.available_seats >= 0);
     return (
         <div>
             <Cover img={img} title="Our Instructors"></Cover>

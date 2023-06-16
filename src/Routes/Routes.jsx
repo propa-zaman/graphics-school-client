@@ -13,6 +13,8 @@ import Classes from "../pages/Classes/Classes";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import EnrolledClasses from "../pages/Dashboard/EnrolledClasses/EnrolledClasses";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 
   
   
@@ -54,8 +56,16 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
           element: <AllUsers></AllUsers>
         },
         {
+          path: 'manageclasses',
+          element: <ManageClasses></ManageClasses>
+        },
+        {
           path: 'selectedclasses',
           element: <SelectedClass></SelectedClass>
+        },
+        {
+          path: 'enrolledclasses',
+          element: <EnrolledClasses></EnrolledClasses>
         },
         {
           path: 'addclass',

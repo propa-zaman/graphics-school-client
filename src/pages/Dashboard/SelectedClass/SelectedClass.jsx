@@ -1,8 +1,11 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useEnrolled from "../../../hooks/useEnrolled";
+import { useTime } from "framer-motion";
+import useTitle from "../../../hooks/useTitle";
 
 const SelectedClass = () => {
+    useTitle('Selected Classes')
     const [enrolled, refetch] = useEnrolled();
     console.log(enrolled);
     // how does reduce work!!!

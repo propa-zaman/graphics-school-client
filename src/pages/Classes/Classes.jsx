@@ -9,7 +9,7 @@ import ClassTab from './ClassTab';
 const Classes = () => {
     useTitle('Classes');
     const [school] = useSchool();
-    const popular = school.filter(classes => classes.enrolled_students >= 20);
+    const popular = school.filter(classes => classes.available_seats >= 0);
     return (
         <div>
             <Cover img={img} title="Our Classes"></Cover>

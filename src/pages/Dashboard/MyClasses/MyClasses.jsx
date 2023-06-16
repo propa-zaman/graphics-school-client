@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import MyClassesRow from "./MyClassesRow";
+import useTitle from "../../../hooks/useTitle";
 
 
 const MyClasses = () => {
+    useTitle('My Classes')
     const { user } = useContext(AuthContext);
     const [myClasses, setMyClasses] = useState([]);
 
