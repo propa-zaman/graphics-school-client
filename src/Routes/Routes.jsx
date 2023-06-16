@@ -12,6 +12,7 @@ import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 
   
   
@@ -59,6 +60,10 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
         {
           path: 'addclass',
           element: <AddClass></AddClass>
+        },
+        {
+          path: 'myclasses',
+          element: <MyClasses></MyClasses>
         },
         
       ]
