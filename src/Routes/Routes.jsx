@@ -15,6 +15,7 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import EnrolledClasses from "../pages/Dashboard/EnrolledClasses/EnrolledClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+import PrivateRoute from "./PrivateRoute";
 
   
   
@@ -49,7 +50,7 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
     {
       path: 'dashboard',
     //   TODO: make dashboard private route
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>,
       children: [
         {
           path: 'allusers', 

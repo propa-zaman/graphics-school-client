@@ -10,9 +10,7 @@ import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
     useTitle('Dashboard');
-    // TODO: Make them dynamic
-    // const isAdmin = true;
-    // const isInstructor = true;
+   
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
