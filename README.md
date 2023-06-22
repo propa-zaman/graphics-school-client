@@ -3,6 +3,8 @@
 Graphics School is a web application built with React, Firebase, and several other dependencies. It's designed to manage an online school system, allowing users to enroll in classes, instructors to manage their classes, and administrators to view all users and classes.
 
 ## Live Website Link: https://graphics-school.web.app/
+## Server side repo: https://github.com/propa-zaman/graphics-school-server
+
 
 ## Features
 
