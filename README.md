@@ -9,9 +9,6 @@ Welcome to Graphics School! This website is designed to provide online courses a
 - [Introduction](#introduction)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -43,6 +40,7 @@ Graphics School is an online platform that offers a wide range of graphics desig
 
 - Authentication and Authorization:
   - JSON Web Tokens (JWT)
+  - Firebase 
 
 - Deployment:
   - Firebase (Front-end)
