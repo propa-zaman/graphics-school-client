@@ -1,57 +1,75 @@
 # Graphics School
 
-Welcome to Graphics School! This website is designed to provide online courses and resources for learning graphics design.
+Graphics School is a web application built with React, Firebase, and several other dependencies. It's designed to manage an online school system, allowing users to enroll in classes, instructors to manage their classes, and administrators to view all users and classes.
 
 ## Live Website Link: https://graphics-school.web.app/
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-Graphics School is an online platform that offers a wide range of graphics design courses taught by industry professionals. Whether you are a beginner looking to learn the basics of graphic design or an experienced designer wanting to enhance your skills, Graphics School has something for everyone.
-
 ## Features
 
-- Browse and enroll in various graphics design courses
-- View course details such as instructor, duration, and price
-- Manage your enrolled classes and track your progress
-- User authentication and authorization
-- Admin panel to manage courses and users
-- Instructor panel to manage assigned courses
+1. Home Page: Contains general information about the platform.
+2. Classes: Page to view all available classes.
+3. Instructors: Page to view all instructors.
+4. Login and Signup: User authentication system.
+5. Dashboard (Private Route): Accessible only to authenticated users. Includes the following features:
+    - All Users: View all users registered on the platform.
+    - Manage Classes: Admin feature to manage all classes.
+    - Selected Classes: View classes selected by the user.
+    - Enrolled Classes: View classes where the user is enrolled.
+    - Add Class: Page for instructors to add a new class.
+    - My Classes: Page for instructors to view their own classes.
+6. Error page for handling routing errors.
 
-## Technologies Used
+## Tech Stack
 
-- Front-end:
-  - React.js
-  - HTML5
-  - CSS3
-  - Tailwind CSS
+- Front End: React
+- Routing: React-router-dom
+- UI Components: @headlessui/react, react-icons
+- Carousel: react-responsive-carousel
+- Parallax: react-parallax
+- Animations: framer-motion, react-spring
+- State Management: @tanstack/react-query, react-query
+- Form Management: react-hook-form
+- HTTP client: Axios
+- Toast: react-hot-toast
+- Back End: Firebase
+- User Authentication: Firebase Auth
+- Local Storage: localforage
+- Sorting: match-sorter, sort-by
+- Alert: sweetalert2
 
-- Back-end:
-  - Node.js
-  - Express.js
-  - MongoDB
+## Getting Started
 
-- Authentication and Authorization:
-  - JSON Web Tokens (JWT)
-  - Firebase 
+1. Clone the repo
+\`\`\`
+git clone https://github.com/your_username_/Project-Name.git
+\`\`\`
 
-- Deployment:
-  - Firebase (Front-end)
-  - Vercel (Back-end)
-  - MongoDB Atlas (Database)
+2. Install NPM packages
+\`\`\`
+npm install
+\`\`\`
 
+3. Run the application
+\`\`\`
+npm start
+\`\`\`
 
 ## Contributing
 
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request. Make sure to follow the coding conventions and guidelines specified in the project.
+Any contributions you make are greatly appreciated.
+
+1. Fork the Project
+2. Create your Feature Branch (\`git checkout -b feature/AmazingFeature\`)
+3. Commit your Changes (\`git commit -m 'Add some AmazingFeature'\`)
+4. Push to the Branch (\`git push origin feature/AmazingFeature\`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Distributed under the MIT License. See \`LICENSE\` for more information.
+
+## Contact
+
+Afra Zaman - propazaman12@gmail.com
+
+Project Link: [https://github.com/propa-zaman/graphics-school-client](https://github.com/propa-zaman/graphics-school-client)
